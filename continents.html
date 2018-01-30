@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Site wide common head info: should really be in SSI or added through PHP script -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    
+    <title>Website Template - Bootstrap, Javascript/JQuery</title>
+    
+    <!-- Bootstrap and supporting packages -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    
+    <!-- styles and scripts for all site pages -->
+    <link href="styles.css" rel="stylesheet">
+    <script src="nav.js"></script>    
+    <script src="footer.js"></script>
+
+    <!-- Custom styles for this template -->
+    <style> 
+    .sidebar {
+        list-style-type: none;
+    }
+    .sidebar .btn {
+        background-color: white; 
+        font-size: 20px;      
+    } 
+    .sidebar button:hover {
+        background-color: #cccccc;
+    };
+    .sidebar button:active {
+        outline: none !important;
+        box-shadow: none;
+        background-color: white;
+    }
+    .sidebar button:focus {
+        outline: none !important;
+        box-shadow: none;
+        background-color: white;
+    }       
+    </style>
+    <script src="continents.js"></script>
+  </head>
+   
+<body>
+    <!-- top navigation bar - see nav.js.  This should be in SSI or added through PHP -->
+    <span id="topNav"></span> 
+
+    <main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h4>Continents</h4>       
+                <ul class='sidebar'>
+                    <li><button class="btn btn-default navbtn" id="africa">Africa</button></li>      
+                    <li><button  class="btn btn-default navbtn" id="antartica">Antartica</button></li>
+                    <li><button  class="btn btn-default navbtn" id="asia">Asia</button></li>      
+                    <li><button class="btn btn-default navbtn" id="australia">Australia</button></li>  
+                    <li><button class="btn btn-default navbtn" id="europe">Europe</button></li>
+                    <li><button class="btn btn-default navbtn" id="northAmerica">North America</button></li>      
+                    <li><button class="btn btn-default navbtn" id="southAmerica">South America</button></li>                                                                    
+                </ul>
+            </div>
+            <div class="col-md-5">
+                <span id="img"><span>
+            </div>
+            <div class="col-md-5">
+                <span id="content"><span>
+            </div>        
+        </div>
+    </main>
+    <span id="footerInfo"></span>
+</body>
+</html>
+
