@@ -16,7 +16,7 @@ function getContent(ev) {
     $('#'+ev.target.id).css('color','red');
     lastId = ev.target.id;    
     var idx = content.findIndex ( (v) => {return v.name===ev.target.id});  
-    $('#img').html('<img src="images\\'+content[idx].pic + '">'); 
+    $('#img').html('<img class="img-fluid" src="images\\'+content[idx].pic + '">'); 
     $('#content').html('<p>I am ' + content[idx].info + '</p><p>'+fillerText+'</p>');       
 }
 
