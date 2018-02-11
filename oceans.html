@@ -4,17 +4,16 @@
     <!-- Site wide common head info: should really be in SSI or added through PHP script -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    
+    <meta name="description" content="sample website template based on bootstrap and jquery">
+    <meta name="keywords" content="bootstrap javascript jquery">   
     <title>Website Template - Bootstrap, Javascript/JQuery</title>
     
     <!-- Bootstrap and supporting packages -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>   
     <!-- styles and scripts for all site pages -->
     <link href="styles.css" rel="stylesheet">
     <script src="nav.js"></script>    
@@ -28,15 +27,15 @@
     top: -150px;
     visibility: hidden;
 }
-.ocean-info {
+/*.ocean-info {
     float: left;
-}
+}*/
 .ocean-info img{
     float: left;
     margin-right: 20px;
 }
 
-#wrapper {
+/*#wrapper {
     min-height: 100%;
     height: 100%;
     width: 100%;
@@ -44,11 +43,11 @@
     top: 0px;
     left: 0;
     display: inline-block;
-}
+}*/
 #main-wrapper {
     height: 100%;
- /*   overflow-y: auto;*/
-    padding: 0px 0 0px 50px;
+   /*overflow-y: auto;*/
+    padding: 0px 0 0px 150px;
 }
 #main {
     position: relative;
@@ -83,25 +82,25 @@
         padding-top: 0px;
     }
 }*/
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
     #main-wrapper {
         float:right;
     }
-}
+}*/
 /*
 @media (max-width: 992px) {
     #main-wrapper {
         padding-top: 0px;
     }
 }*/
-@media (max-width: 992px) {
+/*@media (max-width: 992px) {
     #sidebar-wrapper {
         position: static;
         height:auto;
         max-height: 300px;
   		border-right:0;
 	}
-}
+}*/
     </style>
      <script>      
     </script>   
@@ -112,7 +111,7 @@
     <span id="topNav"></span>  
     <main role="main">
     <div class="container">
-    <div class="wrapper">
+ <!--   <div class="wrapper">-->
         <div id="sidebar-wrapper" class="col-lg-2 d-none d-lg-block ">
             <div id="sidebar">
                 <h4>Oceans</h4>
@@ -126,9 +125,9 @@
              </div>
          </div>
 
-         <div id="main-wrapper" class="col-lg-10 pull-right">
-            <div id="main">
-                    <div class="ocean-info">
+        <div id="main-wrapper" class="col-lg-10 pull-right">
+           <div id="main">
+                      <div class="ocean-info">
                     <a id="atlantic" class="anchor"></a><h3>Atlantic Ocean</h3>                                  
                         <img class="img-fluid" src="images/atlantic.gif">
                         <p>Et sed consul repudiare, vel ut lorem temporibus concludaturque. Veri solum eum ei, laoreet reprimique sadipscing vix ne, usu malis molestie moderatius te. Ubique saperet imperdiet ad mel. Erat bonorum invenire pro ex, sea ex option meliore, has no nostro maiorum voluptua. Ea graeci singulis est, inani euripidis quo at, aeterno feugait vix et.</p>
@@ -160,13 +159,15 @@
                         <img class="img-fluid" src="images/southernOcean.jpg">   
                         <p>Et sed consul repudiare, vel ut lorem temporibus concludaturque. Veri solum eum ei, laoreet reprimique sadipscing vix ne, usu malis molestie moderatius te. Ubique saperet imperdiet ad mel. Erat bonorum invenire pro ex, sea ex option meliore, has no nostro maiorum voluptua. Ea graeci singulis est, inani euripidis quo at, aeterno feugait vix et.</p>
                         <p>p>Mei ad error persius mentitum, in pri dicta gloriatur inciderint, cum veri delectus adipisci in. Ad vis appareat sapientem, in luptatum splendide efficiantur pro, no mei hinc similique. Ad quo alia prodesset, in clita inimicus dissentiet nam. Paulo dicam accommodare id quo, purto ludus qualisque cu has. Ius ea molestiae voluptaria, nobis evertitur nam et.</p>                                                                          
-                    </div>                                         
-            </div>
+                    </div>                                        
+            </div> 
         </div>
-    </div> 
+
+<!--    </div>-->
+
     </div>
     </main>
-    <!--<span id="footerInfo"></span>-->
+           <span id="footerInfo"></span> 
 
 </body>
 </html>
