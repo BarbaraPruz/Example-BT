@@ -27,6 +27,11 @@ $(document).ready(function() {
     var href = window.location.href; 
     var c = href.slice(href.lastIndexOf('?')+1);               
     $('.navbtn').on('click', getContent);     
+    $('#btnCollapse').on('click', function() {
+        console.log('collapse clicked');
+         $('#iconCollapse').toggleClass('fa-angle-down');
+         $('#iconCollapse').toggleClass('fa-angle-up');
+       });    
     var e = jQuery.Event( 'click', { target: { id: c}} );
     getContent(e);        
 });
