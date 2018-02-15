@@ -10,37 +10,38 @@ const navHTML= '<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-bla
     <a id="home" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a> \
   </li> \
   <li class="nav-item dropdown"> \
-    <a class="nav-link dropdown-toggle" href="continents.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Continents</a> \
-    <div class="dropdown-menu" aria-labelledby="dropdown01"> \
-      <a class="dropdown-item" href="continents.html?africa">Africa</a> \
-      <a class="dropdown-item" href="continents.html?antartica">Antartica</a> \
-      <a class="dropdown-item" href="continents.html?asia">Asia</a> \
-      <a class="dropdown-item" href="continents.html?australia">Australia</a> \
-      <a class="dropdown-item" href="continents.html?europe">Europe</a> \
-      <a class="dropdown-item" href="continents.html?northAmerica">North America</a> \
-      <a class="dropdown-item" href="continents.html?southAmerica">South America</a>  \
+    <a class="nav-link dropdown-toggle" href="continents.html" id="continentsDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Continents</a> \
+    <div class="dropdown-menu" aria-labelledby="continentsDropDown"> \
+      <a class="dropdown-item" href="continents.html#africa">Africa</a> \
+      <a class="dropdown-item" href="continents.html#antartica">Antartica</a> \
+      <a class="dropdown-item" href="continents.html#asia">Asia</a> \
+      <a class="dropdown-item" href="continents.html#australia">Australia</a> \
+      <a class="dropdown-item" href="continents.html#europe">Europe</a> \
+      <a class="dropdown-item" href="continents.html#northAmerica">North America</a> \
+      <a class="dropdown-item" href="continents.html#southAmerica">South America</a>  \
     </div> \
-</li> \
+  </li> \
+  <li class="nav-item dropdown"> \
+    <a class="nav-link dropdown-toggle" href="oceans.html" id="oceansDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Oceans</a> \
+    <div class="dropdown-menu" aria-labelledby="oceansDropDown"> \
+      <a class="dropdown-item" href="oceans.html#about">About Oceans</a> \
+      <a class="dropdown-item" href="oceans.html#atlantic">Atlantic</a> \
+      <a class="dropdown-item" href="oceans.html#arctic">Arctic</a> \
+      <a class="dropdown-item" href="oceans.html#indian">Indian</a> \
+      <a class="dropdown-item" href="oceans.html#pacific">Pacific</a> \
+      <a class="dropdown-item" href="oceans.html#southern">Southern</a> \
+    </div> \
+  </li>  \
 <li class="nav-item dropdown"> \
-          <a class="nav-link dropdown-toggle" href="oceans.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Oceans</a> \
-          <div class="dropdown-menu" aria-labelledby="dropdown02"> \
-            <a class="dropdown-item" id="x" href="oceans.html#atlantic">Atlantic</a> \
-            <a class="dropdown-item" id="x" href="oceans.html#arctic">Arctic</a> \
-            <a class="dropdown-item" id="x" href="oceans.html#indian">Indian</a> \
-            <a class="dropdown-item" id="x" href="oceans.html#pacific">Pacific</a> \
-            <a class="dropdown-item" id="x" href="oceans.html#southern">Southern</a> \
-          </div> \
-      </li>  \
-<li class="nav-item dropdown"> \
-  <a class="nav-link dropdown-toggle" href="wonders.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wonders</a> \
-  <div class="dropdown-menu" aria-labelledby="dropdown03"> \
-    <a class="dropdown-item" href="wonders.html?aurora">Aurora</a> \
-    <a class="dropdown-item" href="wonders.html?grandCanyon">Grand Canyon</a> \
-    <a class="dropdown-item" href="wonders.html?greatBarrierReef">Great Barrier Reef</a> \
-    <a class="dropdown-item" href="wonders.html?harborRio">Harbor of Rio de Janiero</a> \
-    <a class="dropdown-item" href="wonders.html?mountEverest">Mount Everest</a> \
-    <a class="dropdown-item" href="wonders.html?paricutin">Par&iacute;cutin Volcano</a> \
-    <a class="dropdown-item" href="wonders.html?victoriaFalls">Victoria Falls</a>  \
+  <a class="nav-link dropdown-toggle" href="wonders.html" id="wondersDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wonders</a> \
+  <div class="dropdown-menu" aria-labelledby="wondersDropDown"> \
+    <a class="dropdown-item" href="wonders.html#aurora">Aurora</a> \
+    <a class="dropdown-item" href="wonders.html#grandCanyon">Grand Canyon</a> \
+    <a class="dropdown-item" href="wonders.html#greatBarrierReef">Great Barrier Reef</a> \
+    <a class="dropdown-item" href="wonders.html#harborRio">Harbor of Rio de Janiero</a> \
+    <a class="dropdown-item" href="wonders.html#mountEverest">Mount Everest</a> \
+    <a class="dropdown-item" href="wonders.html#paricutin">Par&iacute;cutin Volcano</a> \
+    <a class="dropdown-item" href="wonders.html#victoriaFalls">Victoria Falls</a>  \
   </div> \
 </li> \
       <li class="nav-item"> \
@@ -62,11 +63,6 @@ $(document).ready(function() {
         $('#topNav').html(navHTML); // only because no SSI or PHP
         $('ul.navbar-nav a[href="'+ fn +'"]').parent().addClass('active');    
         $(".dropdown-item").click(function(ev){ 
-          console.log ('click hamburger ' + $('#toggler').is(":visible"));
-          console.log (ev);
-          if ($('#toggler').is(":visible"))
-        //  $('.navbar-collapse').toggle();
-           $('.navbar-collapse').collapse('hide');
-        //   $('#navbarsExampleDefault').collapse();        
+           $('.navbar-collapse').collapse('hide');      
         });
 });

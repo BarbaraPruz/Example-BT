@@ -36,28 +36,8 @@
     .aboutSection p {
         margin-left: 15px;
     }
-    .sidebar {
-        list-style-type: none;
-        padding-left:0;   
-    }
-    .sidebar .btn {
-        background-color: white; 
-        font-size: 15px;      
-    } 
-    .sidebar button:hover {
-        background-color: #cccccc;
-    };
-    .sidebar button:active {
-        outline: none !important;
-        box-shadow: none;
-        background-color: white;
-    }
-    .sidebar button:focus {
-        outline: none !important;
-        box-shadow: none;
-        background-color: white;
-    }       
     </style>
+    <link href="sidebar.css" rel="stylesheet">      
     <script src="wonders.js"></script>
   </head>
    
@@ -68,9 +48,7 @@
     <main role="main">
     <div class="container"> 
         <div class="row aboutSection">
-        <!--    <div class="col-lg-2 d-none d-lg-block"></div>
-            <div class="col-lg-10 col-md-12 col-sm-12">-->
-
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <a href="#about" class="btn btn-info" id="btnCollapse" data-toggle="collapse">About Wonders of the World <span id="iconCollapse" class="fa fa-angle-down"></span></a>
                 <div id="about" class="collapse">
                     <p>There are many lists of the wonders of the world.  This list is the 7 natural wonders as compiled by CNN.</p>
@@ -79,19 +57,20 @@
                         Per offendit salutandi cu, ut duo clita regione platonem. Has ne rebum delicatissimi, at vix libris ponderum.
                     </p>
                 </div>
-          <!--  </div>   -->      
-        </div>           
+            </div>        
+        </div>  
+
         <div class="row">
             <div class="col-lg-2 d-none d-lg-block">
                 <h4>Natural Wonders</h4>       
-                <ul class='sidebar'>            
-                    <li><button class="btn btn-default navbtn" id="aurora">Aurora</button></li>      
-                    <li><button  class="btn btn-default navbtn" id="grandCanyon">Grand Canyon</button></li>
-                    <li><button  class="btn btn-default navbtn" id="greatBarrierReef">Great Barrier Reef</button></li>      
-                    <li><button class="btn btn-default navbtn" id="harborRio">Harbor of Rio de Janiero</button></li>  
-                    <li><button class="btn btn-default navbtn" id="mountEverest">Mount Everest</button></li>
-                    <li><button class="btn btn-default navbtn" id="paricutin">Par&iacute;cutin Volcano</button></li>      
-                    <li><button class="btn btn-default navbtn" id="victoriaFalls">Victoria Falls</button></li>                                                                    
+                <ul class='sidebar'>         
+                    <li><a href="#aurora">Aurora</a></li>      
+                    <li><a href="#grandCanyon">Grand Canyon</></li>
+                    <li><a href="#greatBarrierReef">Great Barrier Reef</a></li>      
+                    <li><a href="#harborRio">Harbor of Rio de Janiero</a></li>  
+                    <li><a href="#mountEverest">Mount Everest</a></li>
+                    <li><a href="#paricutin">Par&iacute;cutin Volcano</a></li>      
+                    <li><a href="#victoriaFalls">Victoria Falls</a></li>                                                                    
                 </ul>
             </div>
        

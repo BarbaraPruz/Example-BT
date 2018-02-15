@@ -4,105 +4,68 @@
     <!-- Site wide common head info: should really be in SSI or added through PHP script -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="sample website template based on bootstrap and jquery">
-    <meta name="keywords" content="bootstrap javascript jquery">   
+    <meta name="description" content="">
+    
     <title>Website Template - Bootstrap, Javascript/JQuery</title>
     
     <!-- Bootstrap and supporting packages -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <!-- styles and scripts for all site pages -->
     <link href="styles.css" rel="stylesheet">
     <script src="nav.js"></script>    
     <script src="footer.js"></script>
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for thi template -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
     <style> 
-.anchor {
-    display: block;
-    position: relative;
-    top: -150px;
-    visibility: hidden;
-}
-/*.ocean-info {
-    float: left;
-}*/
-.ocean-info img{
-    float: left;
-    margin-right: 20px;
-}
-
-/*#wrapper {
-    min-height: 100%;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    display: inline-block;
-}*/
-#main-wrapper {
-    height: 100%;
-   /*overflow-y: auto;*/
-    padding: 0px 0 0px 150px;
-}
-#main {
-    position: relative;
-    height: 100%;
-    overflow-y: auto;
-    padding: 0 15px 0 50px;
-}
-#sidebar-wrapper {
-    height: 100%;
-    padding: 0px 40px 0px 20px;
-    position: fixed;
-/*    border-right: 1px solid gray;*/
-}
-#sidebar {
-    position: relative;
-    height: 100%;
- /*   overflow:hidden;*/
-}
-#sidebar .list-group-item {
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
-        border-top: 0;
-}
-.list-group-item {
-    font-size: 20px;
-    color: black;
-}
-/*
-@media (max-width: 992px) {
-    body {
-        padding-top: 0px;
+    .aboutSection .btn{
+          width: 100%;
+          font-size:20px;
+          margin-bottom: 15px;
     }
-}*/
-/*@media (min-width: 992px) {
-    #main-wrapper {
+    .fa-angle-up, .fa-angle-down {
         float:right;
+        font-size: 25px;
+    }       
+    .ocean-info img{
+        float: left;
+        margin-right: 20px;
     }
-}*/
-/*
-@media (max-width: 992px) {
-    #main-wrapper {
-        padding-top: 0px;
+    .ocean-info p {
+        text-align: left;
     }
-}*/
-/*@media (max-width: 992px) {
-    #sidebar-wrapper {
-        position: static;
-        height:auto;
-        max-height: 300px;
-  		border-right:0;
-	}
-}*/
+    .panel-group {
+        text-align: center;
+    }
+    .panel-heading .btn-primary {
+        width: 80%;
+        text-align: center;
+    }
     </style>
-     <script>      
+     <script>
+    function toggleIcons(hash) {
+        $('a[href^="'+hash+'"]').find('span').toggleClass('fa-angle-down');
+        $('a[href^="'+hash+'"]').find('span').toggleClass('fa-angle-up');    
+    }
+    $(document).ready(function() {     
+        $('.btnCollapse').on('click', function(ev) {
+            $(this).find('span').toggleClass('fa-angle-down');
+            $(this).find('span').toggleClass('fa-angle-up');     
+        }); 
+        var hash = window.location.hash;   
+        $(hash).collapse('show');
+        toggleIcons(hash);
+    }); 
+    $(window).on('hashchange', function() {
+        var hash = window.location.hash;   
+        $(hash).collapse('show');
+        toggleIcons(hash);        
+    });           
     </script>   
   </head>
    
@@ -111,63 +74,91 @@
     <span id="topNav"></span>  
     <main role="main">
     <div class="container">
- <!--   <div class="wrapper">-->
-        <div id="sidebar-wrapper" class="col-lg-2 d-none d-lg-block ">
-            <div id="sidebar">
-                <h4>Oceans</h4>
-                <ul class="nav list-group">
-                    <li><a class="list-group-item" href="#atlantic">Atlantic</a></li>
-                    <li><a class="list-group-item" href="#arctic">Arctic</a></li>
-                    <li><a class="list-group-item" href="#indian">Indian</a></li>
-                    <li><a class="list-group-item" href="#pacific">Pacific</a></li>
-                    <li><a class="list-group-item" href="#southern">Southern</a></li>
-                </ul>
-             </div>
-         </div>
+        <div class="aboutSection">
+            <a href="#about" class="btn btn-info btnCollapse" data-toggle="collapse">About Oceans of the World<span class="fa fa-angle-up"></span></a>
+            <div id="about" class="collapse in show">
+                <p>All about Oceans in general here!</p>
+                <p>Et oblique mnesarchum eam, dicta principes ea eos. Ullum constituto liberavisse pro eu, an usu alia aliquid. 
+                    Aperiam labores laboramus ex mel. Eos affert fierent ne. Vim iudico tritani constituam ex, ad simul iudicabit mei. 
+                    Per offendit salutandi cu, ut duo clita regione platonem. Has ne rebum delicatissimi, at vix libris ponderum.
+                </p>
+            </div>
+        </div>
 
-        <div id="main-wrapper" class="col-lg-10 pull-right">
-           <div id="main">
-                      <div class="ocean-info">
-                    <a id="atlantic" class="anchor"></a><h3>Atlantic Ocean</h3>                                  
-                        <img class="img-fluid" src="images/atlantic.gif">
+        <div class="panel-group" id="accordion">
+            <div class="clearfix panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                    <a class="btn btn-primary btnCollapse" data-toggle="collapse" data-parent="#accordion" href="#atlantic">Atlantic Ocean<span class="fa fa-angle-down"></span></a>
+                    </h5>
+                </div>
+                <div id="atlantic" class="panel-collapse collapse">
+                    <div class="panel-body ocean-info">
+                        <img src="images/atlantic.gif">
                         <p>Et sed consul repudiare, vel ut lorem temporibus concludaturque. Veri solum eum ei, laoreet reprimique sadipscing vix ne, usu malis molestie moderatius te. Ubique saperet imperdiet ad mel. Erat bonorum invenire pro ex, sea ex option meliore, has no nostro maiorum voluptua. Ea graeci singulis est, inani euripidis quo at, aeterno feugait vix et.</p>
                         <p>Mei ad error persius mentitum, in pri dicta gloriatur inciderint, cum veri delectus adipisci in. Ad vis appareat sapientem, in luptatum splendide efficiantur pro, no mei hinc similique. Ad quo alia prodesset, in clita inimicus dissentiet nam. Paulo dicam accommodare id quo, purto ludus qualisque cu has. Ius ea molestiae voluptaria, nobis evertitur nam et.</p>
                     </div>
-                    <br style="clear: both;"> 
-                     <div class="ocean-info">               
-                    <a id="arctic" class="anchor"></a><h3>Arctic Ocean</h3>
+                </div>
+            </div>
+            <div class="clearfix panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                    <a class="btn btn-primary btnCollapse"  data-toggle="collapse" data-parent="#accordion" href="#arctic">Arctic Ocean<span class="fa fa-angle-down"></span></a>
+                    </h5>
+                </div>
+                <div id="arctic" class="panel-collapse collapse">
+                     <div class="panel-body ocean-info">                    
                         <img class="img-fluid" src="images/arctic.jpg">         
                         <p>Et sed consul repudiare, vel ut lorem temporibus concludaturque. Veri solum eum ei, laoreet reprimique sadipscing vix ne, usu malis molestie moderatius te. Ubique saperet imperdiet ad mel. Erat bonorum invenire pro ex, sea ex option meliore, has no nostro maiorum voluptua. Ea graeci singulis est, inani euripidis quo at, aeterno feugait vix et.</p>
                         <p>Mei ad error persius mentitum, in pri dicta gloriatur inciderint, cum veri delectus adipisci in. Ad vis appareat sapientem, in luptatum splendide efficiantur pro, no mei hinc similique. Ad quo alia prodesset, in clita inimicus dissentiet nam. Paulo dicam accommodare id quo, purto ludus qualisque cu has. Ius ea molestiae voluptaria, nobis evertitur nam et.</p>   
                     </div>
-                    <br style="clear: both;"> 
-                    <div class="ocean-info">                 
-                    <a id="indian" class="anchor"></a><h3>Indian Ocean</h3>
+                </div>
+            </div>
+            <div class="clearfix panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                      <a class="btn btn-primary btnCollapse" data-toggle="collapse" data-parent="#accordion" href="#indian">Indian Ocean<span class="fa fa-angle-down"></span></a>
+                    </h5>
+                </div>
+                <div id="indian" class="panel-collapse collapse">
+                    <div class="panel-body ocean-info">
                         <img class="img-fluid" src="images/indianocean.jpg">
                         <p>Et sed consul repudiare, vel ut lorem temporibus concludaturque. Veri solum eum ei, laoreet reprimique sadipscing vix ne, usu malis molestie moderatius te. Ubique saperet imperdiet ad mel. Erat bonorum invenire pro ex, sea ex option meliore, has no nostro maiorum voluptua. Ea graeci singulis est, inani euripidis quo at, aeterno feugait vix et.</p>
                         <p>Mei ad error persius mentitum, in pri dicta gloriatur inciderint, cum veri delectus adipisci in. Ad vis appareat sapientem, in luptatum splendide efficiantur pro, no mei hinc similique. Ad quo alia prodesset, in clita inimicus dissentiet nam. Paulo dicam accommodare id quo, purto ludus qualisque cu has. Ius ea molestiae voluptaria, nobis evertitur nam et.</p>                
                     </div>
-                    <br style="clear: both;"> 
-                    <div class="ocean-info">                    
-                    <a id="pacific" class="anchor"></a><h3>Pacific Ocean</h3>
+                </div>
+            </div>
+            <div class="clearfix panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                    <a class="btn btn-primary btnCollapse"  data-toggle="collapse" data-parent="#accordion" href="#pacific">Pacific Ocean<span class="fa fa-angle-down"></span></a>
+                    </h5>
+                </div>
+                <div id="pacific" class="panel-collapse collapse">
+                    <div class="panel-body ocean-info">
                         <img class="img-fluid" src="images/pacific.jpg">                  
                         <p>Et sed consul repudiare, vel ut lorem temporibus concludaturque. Veri solum eum ei, laoreet reprimique sadipscing vix ne, usu malis molestie moderatius te. Ubique saperet imperdiet ad mel. Erat bonorum invenire pro ex, sea ex option meliore, has no nostro maiorum voluptua. Ea graeci singulis est, inani euripidis quo at, aeterno feugait vix et.</p>
                     </div>
-                    <br style="clear: both;"> 
-                    <div class="ocean-info">               
-                    <a id="southern" class="anchor"></a><h3>Southern Ocean</h3>  
+                </div>
+            </div> 
+            <div class="clearfix panel panel-default">
+               <div class="panel-heading">
+                    <h5 class="panel-title">
+                    <a  class="btn btn-primary btnCollapse" data-toggle="collapse" data-parent="#accordion" href="#southern">Southern Ocean<span class="fa fa-angle-down"></span></a>
+                    </h5>
+                </div>
+                <div id="southern" class="panel-collapse collapse">
+                    <div class="panel-body ocean-info">
                         <img class="img-fluid" src="images/southernOcean.jpg">   
                         <p>Et sed consul repudiare, vel ut lorem temporibus concludaturque. Veri solum eum ei, laoreet reprimique sadipscing vix ne, usu malis molestie moderatius te. Ubique saperet imperdiet ad mel. Erat bonorum invenire pro ex, sea ex option meliore, has no nostro maiorum voluptua. Ea graeci singulis est, inani euripidis quo at, aeterno feugait vix et.</p>
                         <p>p>Mei ad error persius mentitum, in pri dicta gloriatur inciderint, cum veri delectus adipisci in. Ad vis appareat sapientem, in luptatum splendide efficiantur pro, no mei hinc similique. Ad quo alia prodesset, in clita inimicus dissentiet nam. Paulo dicam accommodare id quo, purto ludus qualisque cu has. Ius ea molestiae voluptaria, nobis evertitur nam et.</p>                                                                          
-                    </div>                                        
-            </div> 
-        </div>
-
-<!--    </div>-->
-
+                    </div>                   
+                </div>
+            </div>                           
+        </div>                            
     </div>
     </main>
-           <span id="footerInfo"></span> 
+    <span id="footerInfo"></span>
 
 </body>
 </html>
