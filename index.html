@@ -23,7 +23,15 @@
     <!-- Custom styles/scripts for this template -->
     <style>
       .info {
-        pad-top: 25px;
+        margin-top: 40px;
+      }
+      @media only screen and (min-width : 768px) {
+        .main-body {
+          background-image: url(images/world-map.png);
+          background-size:     contain;                    
+          background-repeat:   no-repeat;
+          background-position: center center;              
+        }
       }
     </style>
   </head>
@@ -32,14 +40,14 @@
     <span id="topNav"></span> 
 
     <main role="main">
-
-      <div class="container">
-          <h1 class="display-4">Hello World!</h1>
-          <p>Area for marketing highlights or news.  Can include images or links</p>
-          <p>
-            Lorem ipsum dolor sit amet, usu quaestio efficiendi te. Sale mutat cu sed. Veri mandamus vel id. Sed iusto fabellas splendide no, et sea persius omittantur, per eu vero graecis. Pro affert suscipit et, his adhuc facilis in. Novum dicant menandri eos at, qui molestie moderatius ad, eu illum nominati comprehensam nec. Minimum repudiandae et mei, liber disputando in duo.
+    <div class="main-body">
+      <div class="container intro">
+         <h1 class="display-4">Hello World!</h1>
+          <p>This web site contains template pages for presenting content like products or classes of information.</p>
+          <p>Implementation uses HTML5, CSS Bootstrap libraries, Javascript and JQuery.  No CMS or high functionality front end framework
+             is used.  This allows the site owner, with just some basic HTML knowledge, to occasionally update content.  This implemenation 
+             approach is not appropriate for a site owner with frequent content updates, or with more sophisticated presentation requirements.
           </p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
 
       <div class="container info">
@@ -61,8 +69,8 @@
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div>
         </div>
-      </div> <!-- /container -->
-
+      </div>  
+    </div>
     </main>
 
     <span id="footerInfo"></span>
